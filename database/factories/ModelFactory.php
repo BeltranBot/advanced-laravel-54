@@ -39,3 +39,10 @@ $factory->define(App\Profile::class, function (Faker\Generator $faker) {
       'about' => $faker->paragraph(random_int(3,5))
     ];
 });
+
+$factory->define(App\Website::class, function (Faker\Generator $faker) {
+
+    return [
+      'url' => $faker->url,
+    ];
+});

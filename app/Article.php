@@ -13,4 +13,9 @@ class Article extends Model
     // laravel's naming conventions
     return $this->belongsTo(User::class);
   }
+
+  public function websites() {
+    // many to many relationships
+    return $this->belongsToMany(Website::class);
+  }
 }

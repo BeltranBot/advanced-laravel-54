@@ -11,12 +11,20 @@
                   <div class="list-group">
                     @foreach($articles as $article)
                       <div class="list-group-item">
-                        <p>
-                          {{ $article->title }}
-                        </p>
-                        <p style="color:red">
-                          by {{ $article->user->name }}
-                        </p>
+                        <h4>
+                          <p>
+                            {{ $article->title }}
+                          </p>
+                          <p style="color:red">
+                            by {{ $article->user->name }}
+                          </p>
+                          <p>
+                            @foreach ($article->websites as $website)
+                              <a href="{{$website->url}}">{{$website->url}}</a>
+                              <br>
+                            @endforeach
+                          </p>
+                        </h4>
                         <p class="list-group-item-text">
                           {{$article->body}}
                         </p>
